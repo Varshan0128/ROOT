@@ -1,0 +1,12 @@
+﻿/* minimal main.css — enough to test the preloader + curtains reveal */
+.site-content { opacity: 0; transition: opacity .5s ease; }
+.main-content-visible { opacity: 1 !important; }
+.preloader-container { position: fixed; inset: 0; display:flex; align-items:center; justify-content:center; background:#000; color:#fff; z-index:200; transition: opacity .6s; pointer-events: none;}
+.preloader-img { width: 200px; height: auto; margin-bottom: 12px; }
+.curtain { position: fixed; left: 0; width: 100%; height: 50vh; background: #000; z-index:180; transition: transform 1.2s ease-in-out; }
+.top-curtain { top: 0; transform: translateY(0); }
+.bottom-curtain { bottom: 0; transform: translateY(0); }
+.top-curtain.open { transform: translateY(-100%); }
+.bottom-curtain.open { transform: translateY(100%); }
+/* tiny hero spacing so we can see content after reveal */
+.hero-section { min-height: 70vh; display:grid; place-items:center; }
