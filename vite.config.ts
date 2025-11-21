@@ -43,6 +43,11 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
+      // Ensure both your SPA index and the static form are included as inputs
+      input: {
+        index: resolve(__dirname, 'index.html'),
+        'early-access-form': resolve(__dirname, 'public/early-access-form.html')
+      },
       output: {
         assetFileNames: (assetInfo: { name: string | undefined }) => {
           if (assetInfo.name === 'main.js') return 'assets/js/main.js';
