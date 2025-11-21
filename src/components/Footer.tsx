@@ -21,7 +21,7 @@ export default function Footer(): JSX.Element {
           <ul className="ha-social-list">
             <li>
               <a
-                href="https://www.linkedin.com/company/root-ai"
+                href="https://www.linkedin.com/company/start-at-root/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ha-social-link"
@@ -64,11 +64,11 @@ export default function Footer(): JSX.Element {
             </li>
 
             <li>
-              <a className="ha-social-link" href="tel:+919876543210" aria-label="Phone">
+              <a className="ha-social-link" href="tel:+917603865862" aria-label="Phone">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
                   <path d="M22 16.92V20C22 20.55 21.55 21 21 21C10.5 21 3 13.5 3 3C3 2.45 3.45 2 4 2H7.09C7.58 2 8 2.33 8.19 2.8L9.5 6.5C9.64 6.86 9.58 7.27 9.34 7.59L7.79 9.79C8.89 12.3 11.7 15.09 14.21 16.19L16.41 14.64C16.73 14.4 17.14 14.34 17.5 14.48L21.2 15.8C21.67 15.99 22 16.41 22 16.9V16.92Z" stroke="currentColor" strokeWidth="1.2"/>
                 </svg>
-                <span>+91 98765 43210</span>
+                <span>+91 76038 65862</span>
               </a>
             </li>
           </ul>
