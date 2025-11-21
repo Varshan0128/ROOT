@@ -1,4 +1,8 @@
-/* navbar.css - cleaned, responsive, accessible */
+/* Navbar.css - cleaned, responsive, accessible
+   Save this file as: D:\ai_web\hiredai\src\components\Navbar.css
+   IMPORTANT: filename must be exactly "Navbar.css" (capital N) so the import in
+   src/components/Navbar.tsx (import './Navbar.css') resolves on case-sensitive hosts.
+*/
 
 /* Theme & sizing variables */
 :root{
@@ -74,8 +78,6 @@
   margin-left: auto;  /* push nav to the right of the logo */
   margin-right: 0rem; /* move nav closer to the Get Early Access button */
 }
-
-
 
 /* force nav group to not grow and stay aligned in the center-right area */
 .nav-links { flex: 0 0 auto; }
