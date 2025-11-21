@@ -1,0 +1,309 @@
+/* Navbar.css - cleaned, responsive, accessible
+   Save this file as: D:\ai_web\hiredai\src\components\Navbar.css
+   IMPORTANT: filename must be exactly "Navbar.css" (capital N) so the import in
+   src/components/Navbar.tsx (import './Navbar.css') resolves on case-sensitive hosts.
+*/
+
+/* Theme & sizing variables */
+:root{
+  --navbar-height: 70px;         /* adjust to change header height */
+  --navbar-bg: rgba(15,10,5,0.98);
+  --accent: #ff9a3e;
+  --text: rgba(255,255,255,0.92);
+  --muted-text: rgba(255,255,255,0.78);
+  --max-width: 1400px;
+  --nav-panel-width: 320px;      /* mobile side menu width */
+  --nav-right-offset: 40px;      /* how much to nudge nav to the right */
+  --nav-gap-desktop: 0.9rem;     /* reduced gap between links */
+}
+
+/* --------- Navbar base (fixed) --------- */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  min-height: var(--navbar-height);
+  width: 100%;
+  z-index: 9999;
+  background: linear-gradient(180deg, rgba(9,7,5,0.98), var(--navbar-bg));
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.32);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* container inside navbar to keep site width aligned */
+.navbar-container{
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-sizing: border-box;
+
+  /* small right padding to nudge the whole menu area right (logo stays left) */
+  padding-right: var(--nav-right-offset);
+}
+
+/* Logo */
+.navbar__logo,
+.logo {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* nav menu (desktop) */
+.navbar__menu,
+/* Stronger nav placement rule (add at end of Navbar.css) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  margin-left: auto;  /* push nav to the right of the logo */
+  margin-right: 0rem; /* move nav closer to the Get Early Access button */
+}
+
+/* force nav group to not grow and stay aligned in the center-right area */
+.nav-links { flex: 0 0 auto; }
+
+/* common link style */
+.navbar__link,
+.nav-link {
+  color: var(--muted-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  position: relative;
+  transition: color .18s ease, background .18s ease, transform .12s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* subtle hover background to make items feel clickable */
+.navbar__link:hover,
+.nav-link:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-1px);
+}
+
+/* underline animation */
+.navbar__link::after,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width .25s ease;
+  border-radius: 2px;
+}
+.navbar__link:hover::after,
+.navbar__link.active::after,
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: calc(100% - 20px);
+}
+
+/* nav action buttons */
+.navbar__actions,
+.nav-buttons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* generic button */
+.btn,
+.navbar__button,
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: transparent;
+  transition: transform .14s ease, box-shadow .16s ease, background .16s ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-width: 110px;
+}
+
+/* primary CTA */
+.button--primary,
+.btn-primary,
+.btn-cta,
+.navbar__button.button--primary {
+  background: linear-gradient(180deg,#ff9a3d 0%,#ff7a20 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(255,122,32,0.26), 0 2px 10px rgba(0,0,0,0.28);
+  border-radius: 999px;
+  padding: 10px 26px;
+}
+.button--primary:hover,
+.btn-primary:hover,
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(255,122,32,0.28);
+}
+
+/* secondary/outline */
+.button--secondary,
+.btn-outline {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 8px 20px;
+  border-radius: 999px;
+}
+.button--secondary:hover,
+.btn-outline:hover {
+  background: rgba(255,255,255,0.10);
+  transform: translateY(-2px);
+}
+
+/* small glossy overlay for CTA (visual) */
+.btn-cta::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0));
+  border-radius: 10px 10px 0 0;
+  pointer-events: none;
+}
+
+/* make the nav-links group sit a bit to the right on wide screens if extra nudging needed */
+@media (min-width: 1200px) {
+  .nav-links { margin-left: 2rem; }
+}
+
+/* hamburger button (mobile) */
+.navbar__mobile-toggle,
+.hamburger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: .4rem;
+  align-items: center;
+  justify-content: center;
+  padding: .25rem;
+}
+
+/* hamburger lines */
+.hamburger-line,
+.navbar__mobile-toggle span {
+  width: 24px;
+  height: 2.5px;
+  background: white;
+  display: block;
+  border-radius: 3px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+
+/* ---------- Responsive: mobile menu as side drawer ---------- */
+@media (max-width: 1024px) {
+  .navbar__menu,
+  .nav-links {
+    /* hide the desktop menu on small screens */
+    display: none;
+  }
+
+  .navbar__mobile-toggle,
+  .hamburger {
+    display: inline-flex;
+  }
+
+  /* side menu panel */
+  .nav-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: var(--nav-panel-width);
+    max-width: 92%;
+    height: 100vh;
+    background: var(--navbar-bg);
+    box-shadow: -6px 0 24px rgba(0,0,0,0.35);
+    padding: calc(var(--navbar-height) + 20px) 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: right .28s cubic-bezier(.2,.9,.3,1);
+    z-index: 9998;
+  }
+
+  .nav-panel.open {
+    right: 0;
+  }
+
+  .nav-panel .navbar__link,
+  .nav-panel .nav-link {
+    display: block;
+    padding: 14px 8px;
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .nav-panel .btn,
+  .nav-panel .btn-cta,
+  .nav-panel .navbar__button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  /* on small screens keep the container padding smaller to fit */
+  .navbar-container { padding-right: 16px; }
+}
+
+/* ---------- Scrolled (compact) state ---------- */
+.navbar.scrolled {
+  height: calc(var(--navbar-height) - 12px);
+  padding: 0 .75rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ---------- Accessibility helpers ---------- */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; overflow: hidden;
+  clip: rect(1px,1px,1px,1px); white-space:nowrap;
+}
+
+/* ensure navbar content doesn't wrap awkwardly */
+.navbar-container * { box-sizing: border-box; }
+
+/* small adjustments for very tight screens - ensure CTAs remain visible */
+@media (max-width: 760px) {
+  .btn, .btn-primary, .btn-cta { min-width: 90px; padding: 8px 14px; font-size: 0.9rem; }
+  .nav-links { gap: 12px; }
+}
