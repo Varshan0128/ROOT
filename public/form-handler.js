@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       msg.textContent = 'Sending...';
       try {
-        const response = await fetch('http://localhost:3001/api/early-access', {
+        const response = await fetch('https://root-backend-l3r6.onrender.com/api/early-access', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, phone, notes })
