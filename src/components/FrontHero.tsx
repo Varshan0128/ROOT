@@ -35,7 +35,8 @@ const FrontHero: React.FC<FrontHeroProps> = ({ openDirectly = false, fullWidth =
     }
 
     // Fallback - open the static form
-    window.open("/early-access-form.html", "_blank", "noopener,noreferrer");
+    window.open("/public/early-access-form.html", "_blank", "noopener,noreferrer");
+
   };
 
   return (
