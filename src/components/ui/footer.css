@@ -1,0 +1,85 @@
+/* footer.css - two column footer for Hired AI */
+.ha-footer {
+  width: 100%;
+  padding: 24px 16px;
+  background: rgba(10,6,4,0.65);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  color: #eae1d8;
+  backdrop-filter: blur(6px);
+}
+
+.ha-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 0 12px;
+}
+
+.ha-footer-left,
+.ha-footer-right {
+  padding: 6px;
+}
+
+.ha-footer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #fff;
+}
+
+.ha-footer-sub {
+  margin: 0 0 6px 0;
+  opacity: 0.9;
+}
+
+.ha-footer-copy {
+  margin: 6px 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.ha-footer-small {
+  margin-top: 6px;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Right column */
+.ha-footer-title-sm {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.ha-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.ha-footer-links a {
+  color: #f2e4d4;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 6px 10px;
+  transition: background .12s ease, transform .12s ease;
+}
+
+.ha-footer-links a:hover {
+  background: rgba(255, 183, 107, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Desktop: two columns side-by-side */
+@media (min-width: 768px) {
+  .ha-footer-inner {
+    grid-template-columns: 1fr 320px; /* left flexible, right fixed-ish */
+  }
+}

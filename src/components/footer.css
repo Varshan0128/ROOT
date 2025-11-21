@@ -1,0 +1,122 @@
+﻿/* footer.css - Compact Root footer */
+
+.ha-footer {
+  background: rgba(15, 8, 5, 0.95);
+  color: #f2e4d4;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 28px 16px 22px; /* Reduced height */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-size: 0.95rem;
+}
+
+/* Inner container */
+.ha-footer__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Left section */
+.ha-footer__left {
+  flex: 1 1 420px;
+  min-width: 250px;
+}
+
+.ha-footer__title {
+  font-size: 1rem;
+  margin: 0 0 4px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ha-footer__muted,
+.ha-footer__meta,
+.ha-footer__desc {
+  margin: 3px 0;
+  color: rgba(242, 228, 212, 0.8);
+  line-height: 1.4;
+  font-size: 0.88rem;
+}
+
+/* Right section */
+.ha-footer__right {
+  flex: 0 1 300px;
+  text-align: right;
+}
+
+.ha-footer__title.small {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* Social links */
+.ha-social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* tighter spacing */
+  align-items: flex-end;
+}
+
+.ha-social-link {
+  color: #f2e4d4;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.ha-social-link svg {
+  width: 18px;
+  height: 18px;
+  color: #f2e4d4;
+}
+
+.ha-social-link:hover {
+  color: #ffb76b;
+  transform: translateX(-3px);
+  filter: drop-shadow(0 0 6px rgba(255, 183, 107, 0.15));
+}
+
+/* Bottom footer note */
+.ha-footer__bottom {
+  max-width: 1180px;
+  margin: 14px auto 0;
+  text-align: center;
+  color: rgba(242, 228, 212, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.ha-footer__bottom .small {
+  font-size: 0.83rem;
+  opacity: 0.65;
+}
+
+/* Responsive adjustments */
+@media (max-width: 860px) {
+  .ha-footer__inner {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .ha-footer__right {
+    text-align: left;
+  }
+  .ha-social-list {
+    align-items: flex-start;
+  }
+  .ha-footer__bottom {
+    text-align: left;
+    margin-top: 10px;
+  }
+}
